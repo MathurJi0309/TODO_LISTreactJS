@@ -1,0 +1,229 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: lightgray;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  background-image: url("https://media.istockphoto.com/id/1092571024/photo/to-do-list-in-notebook-with-calendar.jpg?s=612x612&w=0&k=20&c=NkAHcfu8uAMhAGu5vtXRrgwcW5rP6s9ynU3wiXC-hXc=");
+  background-size: cover;
+}
+
+.card{
+  background-color: rgba(101, 168, 227,.40);
+  border: 1px dashed black;
+  border-radius: 10px;
+  margin-left: 15%;
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.card:hover{
+  background-color: rgba(101, 168, 227,.8);
+  border-radius: 20px;
+  transition: 1000ms;
+}
+
+
+.task{
+  width: 70%;
+  padding-left: 2px;
+  margin-top: 15px; 
+  margin-left: 15px; 
+  margin-bottom: 15px;
+}
+
+
+.action{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  margin-right: 5% ;
+  width: 20%;
+  margin-left: 10%;
+  padding-left: 10px;
+  
+}
+
+.buttonImage{
+  /* width: 25px; */
+  height: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 8px;
+  background-color: saddlebrown;
+  color: aliceblue;
+  border-width: 0;
+}
+
+.taskInput{
+  width: 70%;
+  /* background-color: red; */
+  padding-left: 2px;
+  margin-top: 15px; 
+  margin-left: 15px; 
+  margin-bottom: 15px;
+  /* background-color:; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.taskText{
+  width: 99.5%;
+  padding-left: 2px;
+  margin-left: -2px; 
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+}
+
+
+
+.buttonInput:hover{
+  background-color: rgb(114, 41, 8); 
+}
+
+
+.heading{
+  margin-left:15% ;
+}
+
+.newTask{
+ background-color: rgb(131, 66, 177);
+ width: 85%;
+ padding-left: 15%;
+ color: aliceblue;
+ border-radius: 10px;
+ position: fixed;
+ margin-top: -1.3%;
+
+}
+
+
+.newCard{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+
+.update-btn{
+  margin-top: 10px;
+  background: rgba(181, 43, 181,0.5);
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.update-btn:hover{
+  background-color: rgba(0, 93, 9, 0.8);
+  border:1px dashed rgb(0, 0, 0) ;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  transition: 500ms;
+  padding: 10px;
+
+}
+
+
+.delete-btn{
+  margin: 10px 0 10px;
+  background: rgba(181, 43, 181,0.5);
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.delete-btn:hover{
+  background: red;
+  border-radius: 10px;
+  border: 1px dashed black;
+  color: white;
+  transition: 500ms;
+}
+
+.input{
+  min-width: 10%;
+  margin-left: -10%;
+}
+.input input{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 70%;
+  width: 200%;
+}
+.newInput{
+  width: 110%;
+  /* margin-right: 5%; */
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-btn{
+  height: 30px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+  /* margin-right: 8px; */
+  background-color: rgba(123, 57, 9,0.2);
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  width: 90px;
+  border-radius: 10px;
+}
+
+.input-btn:hover{
+  background-color: rgb(123, 57, 9);
+  border: none;
+  transition: 500ms;
+}
+
+.cpy{
+  margin-top: 12px;
+  min-width: 30%;
+}
+
+.copy-right{
+  color: black;
+  margin-top: 100%;
+  margin-right: 20px;
+}
+
+.copy-right a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.newTaskHead{
+  margin-top: 15px;
+  width: 22%;
+}
+
+
+.bet-div{
+  min-width: 20%;
+}
+
