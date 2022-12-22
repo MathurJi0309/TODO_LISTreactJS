@@ -1,42 +1,67 @@
 import React, { useState, useEffect } from "react";
-import TaskCard from "./components/TaskCard";
-import NewTask from "./components/NewTask";
+import Loader from "./components/Loader";
+import AddItem from "./components/AddItem";
+import TodoItem from "./components/TodoItem";
 
 
 function App() {
 
   const [items, setitems] = useState([]);
-  const [DataisLoaded, setDataisLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
   
-  // fetches the taks list from API as soon as the window is loaded and stores the response in an array
-  useEffect(() => {
+  //------------------------------------------------add the item in the above define array------------------------------------------------------
+ 
+ 
+ 
+ 
+useEffect(() => {
+  
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then(response => response.json())
     .then((json) => setitems(json),
-                    setDataisLoaded(true),
                     console.log(items)
                     )
+                    setLoading(false);
+                    
   },[])
 
   
+
+  // if(loading){
+  //   return <Loader/>;
+  // }
+
+
+
+  //---------------------------------------------return component APp-----------------------------------------------------------------------
+  
   return (
     <div className="App">
-      {/* To add new tasks */}
-      <NewTask/>
-      <h2 className="heading">All Tasks</h2>
 
-      {/* iterates through the array and calls TaskCard and sends the required details as props */}
+
+      {/*------------------------------------------------------ wallpaper means background --------------------------------------*/}
+
+
+      <img className="wallpaper" src="https://media.istockphoto.com/id/1092571024/photo/to-do-list-in-notebook-with-calendar.jpg?s=612x612&w=0&k=20&c=NkAHcfu8uAMhAGu5vtXRrgwcW5rP6s9ynU3wiXC-hXc="></img>
+      <AddItem/>
+
+
+
+      <div className="main-card">
       {
-          items.map((item) => ( 
-            <TaskCard 
-              key={item.id}
-              title={item.title} 
-              completed = {item.completed}
-              id={item.id}
-            />
+        loading ? <Loader/> :
+        items.map((item) => ( 
+          <TodoItem 
           
-          ))
-        }
+            key={item.id}
+            title={item.title} 
+            completed = {item.completed}
+            id={item.id}
+          />
+        
+        ))
+        } 
+      </div>
       
     </div>
   );

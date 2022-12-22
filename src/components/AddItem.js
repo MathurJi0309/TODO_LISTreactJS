@@ -1,9 +1,13 @@
 import React, { useState} from "react";
-const NewTask=(props)=>{
+const AddItem=(props)=>{
 
     const[newTask, setNewTask] = useState('')
 
-    // calls the API with POST method as soon as "ADD" Button is clicked
+//---------------------------------------------add the task with the method post call with the API------------------------------------------------
+
+
+
+
     const AddNewTask = () => {
         if(newTask !== ''){
             fetch(`https://jsonplaceholder.typicode.com/posts`, {
@@ -19,14 +23,17 @@ const NewTask=(props)=>{
             })
             .then((response) => response.json())
             .then((json) => {console.log(json)
+                alert(`new task added`)
             alert(`Task ${json.title} Added`)});
+            
         } else{
             alert("Add a task")
         }
         setNewTask('');
     }
 
-// edits newTask as the input field is changed
+// --------------------------------------------------handle the task change by inpute--------------------------------------------------------------
+
     const handleNewTaskChange = (e) => {
         setNewTask(e.target.value);
     }
@@ -34,12 +41,12 @@ const NewTask=(props)=>{
 
         <div className="newTask">
             <div className="newCard">
-                {/* <div className="newTaskHead">
-                <span> <strong>Add New Task</strong></span>
-                </div> */}
                 
                 <div className="input">
-                
+
+{/* {----------------------------------------------input field for the task to be added-----------------------------------------------------------}*/}
+
+
                 <input 
                 type="text" 
                 className="newInput" 
@@ -48,10 +55,16 @@ const NewTask=(props)=>{
                 />
                 </div>
 
+{/* {--------------------------------------------------btn to input -----------------------------------------------------------------------} */}
+
 
                 <div className="btn-div">
                 <button className="input-btn" onClick={AddNewTask}>Add  </button>
                 </div>
+
+{/* {----------------------------------------------------------copy right-----------------------------------------------------------} */}
+
+
                 <div className="cpy">
                 <span className="copy-right">Copyright-2022 all rights reserved by <a href="https://github.com/MathurJi0309" target="blank">🚩Mathur_Ji🚩</a></span>
                 </div>
@@ -62,4 +75,4 @@ const NewTask=(props)=>{
     )
 }
 
-export default NewTask
+export default AddItem

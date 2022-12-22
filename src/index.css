@@ -12,29 +12,169 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.App {
-  background-image: url("https://media.istockphoto.com/id/1092571024/photo/to-do-list-in-notebook-with-calendar.jpg?s=612x612&w=0&k=20&c=NkAHcfu8uAMhAGu5vtXRrgwcW5rP6s9ynU3wiXC-hXc=");
+/* ------------------------------------------------------App component----------------------------------------------------------------------- */
+.wallpaper {
+  height: 99.8vh;
+  width: 99.8vw;
   background-size: cover;
+  position: fixed;
+  z-index: -5;
+  opacity: 0.7;
+  margin-top: -2%;
 }
 
+/* ------------------------------------------------------Loader component(Loading spinner)----------------------------------------------------- */
+
+.loading-back {
+  background-color: #00796b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin {
+  background-color: #00000020;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  border: 5px solid #00000000;
+  border-top: 5px solid #ffffff;
+  animation: loading 2s linear infinite;
+}
+
+.loading {
+  position: absolute;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ------------------------------------------------------New Task component----------------------------------------------------------------------- */
+
+.newTask{
+  background-color: rgb(131, 66, 177);
+  width: 85%;
+  padding-left: 15%;
+  color: aliceblue;
+  border-radius: 10px;
+  position: fixed;
+  margin-top: -5%;
+  z-index: 0;
+ 
+ }
+ 
+ 
+ .newCard{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   display: flex;
+   justify-content: space-around;
+ }
+
+/* ----------------------------------------------------add css in the input------------------------------------------------------------------- */
+
+ .input{
+  min-width: 10%;
+  margin-left: -10%;
+}
+.input input{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 70%;
+  width: 200%;
+}
+.newInput{
+  width: 110%;
+  /* margin-right: 5%; */
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+/* ------------------------------------------------input-btn------------------------------------------------------------------------------------- */
+
+.input-btn{
+  height: 30px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+  /* margin-right: 8px; */
+  background-color: rgba(123, 57, 9,0.2);
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  width: 90px;
+  border-radius: 10px;
+}
+
+.input-btn:hover{
+  background-color: rgb(123, 57, 9);
+  border: none;
+  transition: 500ms;
+}
+
+/* ---------------------------------------------------------copyRight------------------------------------------------------------------------ */
+
+.cpy{
+  margin-top: 12px;
+  min-width: 30%;
+}
+
+.copy-right{
+  color: black;
+  margin-top: 100%;
+  margin-right: 20px;
+}
+
+.copy-right a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+
+
+/* -------------------------------------------------------TaskCard Component---------------------------------------------------------------- */
+
+ 
 .card{
   background-color: rgba(101, 168, 227,.40);
-  border: 1px dashed black;
+  border: 1px dashed grey;
   border-radius: 10px;
   margin-left: 15%;
   width: 80%;
   margin-top: 20px;
   display: flex;
   flex-direction: row;
+  z-index: 0;
 
 }
 
 .card:hover{
   background-color: rgba(101, 168, 227,.8);
+  border: 1px dashed black;
   border-radius: 20px;
   transition: 1000ms;
 }
+
+
+
+/* --------------------------------------------------------------------task Showing------------------------------------------------------------- */
 
 
 .task{
@@ -58,28 +198,21 @@ code {
   
 }
 
-.buttonImage{
-  /* width: 25px; */
-  height: 25px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-right: 8px;
-  background-color: saddlebrown;
-  color: aliceblue;
-  border-width: 0;
-}
+
+
+
 
 .taskInput{
   width: 70%;
-  /* background-color: red; */
   padding-left: 2px;
-  margin-top: 15px; 
+  margin-top: 30px; 
+  background: none;
   margin-left: 15px; 
+  border-radius: 10px;
   margin-bottom: 15px;
-  /* background-color:; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .taskText{
@@ -92,39 +225,7 @@ code {
   height: 40px;
 }
 
-
-
-.buttonInput:hover{
-  background-color: rgb(114, 41, 8); 
-}
-
-
-.heading{
-  margin-left:15% ;
-}
-
-.newTask{
- background-color: rgb(131, 66, 177);
- width: 85%;
- padding-left: 15%;
- color: aliceblue;
- border-radius: 10px;
- position: fixed;
- margin-top: -1.3%;
-
-}
-
-
-.newCard{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-around;
-}
-
-
-
+/* ---------------------------------------------------------update-btn------------------------------------------------------------------------- */
 
 .update-btn{
   margin-top: 10px;
@@ -140,11 +241,12 @@ code {
   border:1px dashed rgb(0, 0, 0) ;
   color: rgb(255, 255, 255);
   border-radius: 10px;
-  transition: 500ms;
   padding: 10px;
+  transition: 500ms;
 
 }
 
+/* ----------------------------------------------------------------------delete-btn------------------------------------------------------------ */
 
 .delete-btn{
   margin: 10px 0 10px;
@@ -163,59 +265,7 @@ code {
   transition: 500ms;
 }
 
-.input{
-  min-width: 10%;
-  margin-left: -10%;
-}
-.input input{
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 70%;
-  width: 200%;
-}
-.newInput{
-  width: 110%;
-  /* margin-right: 5%; */
-  margin-left: 5%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border-width: 0px;
-}
 
-.input-btn{
-  height: 30px;
-  margin-top: 13px;
-  margin-bottom: 15px;
-  /* margin-right: 8px; */
-  background-color: rgba(123, 57, 9,0.2);
-  color: rgb(255, 255, 255);
-  margin-left: 10px;
-  width: 90px;
-  border-radius: 10px;
-}
-
-.input-btn:hover{
-  background-color: rgb(123, 57, 9);
-  border: none;
-  transition: 500ms;
-}
-
-.cpy{
-  margin-top: 12px;
-  min-width: 30%;
-}
-
-.copy-right{
-  color: black;
-  margin-top: 100%;
-  margin-right: 20px;
-}
-
-.copy-right a{
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
 
 .newTaskHead{
   margin-top: 15px;
@@ -223,7 +273,17 @@ code {
 }
 
 
-.bet-div{
-  min-width: 20%;
+.main-card{
+  margin-top: 5%;
 }
 
+
+
+.completed{
+  background-image: url("https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps.png");
+}
+
+
+.pending{
+  background-image: url("https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png");
+}
