@@ -51,6 +51,7 @@ const AddItem=(props)=>{
                 type="text" 
                 className="newInput" 
                 placeholder="Add New Task" 
+                value={newTask}
                 onChange={handleNewTaskChange}
                 />
                 </div>

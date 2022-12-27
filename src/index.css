@@ -166,10 +166,14 @@ code {
 }
 
 .card:hover{
-  background-color: rgba(101, 168, 227,.8);
+  background-color: rgba(101, 168, 227,.9);
   border: 1px dashed black;
   border-radius: 20px;
   transition: 1000ms;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 20px;
+  /* -webkit-text-stroke: 1px rgb(0, 0, 0); */
 }
 
 
